@@ -9,6 +9,6 @@ app = FastAPI() # iniciar servidor: uvicorn main:app --reload
 # Crear las tablas en la base de datos
 Base.metadata.create_all(bind=engine)
 
-app.include_router(user.router)
-app.include_router(auth.router)
-app.include_router(producto.router)
+app.include_router(user.router, tags=["users"])
+app.include_router(auth.router, tags=["auth"])
+app.include_router(producto.router, tags=["productos"])
