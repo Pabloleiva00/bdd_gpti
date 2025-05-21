@@ -18,7 +18,7 @@ def filtrar_links_productos(elementos_a):
 
 
 # sitio puede ser "unimarc" o "santa isabel" por ahora
-def obtener_productos(nombre_producto, sitio):
+def obtener_productos_scraping(nombre_producto, sitio):
     chrome_options = Options()
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")
@@ -100,5 +100,3 @@ def obtener_productos(nombre_producto, sitio):
 
     browser.quit()
     return json.dumps(productos_resultado, ensure_ascii=False, indent=4)
-
-print(obtener_productos("Arroz", "santa_isabel"))
